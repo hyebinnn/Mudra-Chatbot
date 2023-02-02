@@ -68,9 +68,7 @@ def searchingAlgorithm(movie, answer):
     tmp = tmp[tmp['actors'].str.contains(answer.iloc[0]['주연배우'], na=False)]
     tmp = tmp[tmp['dates'].str.contains(answer.iloc[0]['개봉년도'], na=False)]
     name = tmp.iloc[0]['movie_name']
-    # nameJson = {
-    #     '정답': name
-    # }
+
     return name
 
 
