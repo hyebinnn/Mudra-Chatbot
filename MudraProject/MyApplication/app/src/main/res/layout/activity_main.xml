@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingLeft="16dp"
+    android:paddingTop="16dp"
+    android:paddingRight="16dp"
+    android:paddingBottom="16dp"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/startBtn"
+        android:layout_width="316dp"
+        android:layout_height="94dp"
+        android:layout_centerInParent="true"
+        android:layout_weight="1"
+        android:background="@drawable/button_round"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="START"
+        android:textSize="30dp"
+        android:textColor="@color/white"
+        android:textStyle="normal" />
+</RelativeLayout>
