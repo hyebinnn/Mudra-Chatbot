@@ -16,9 +16,9 @@ Mudra:: Chatbot that-finds-movies-through-keywords
 <br>
 
 - 작품 시연
-<img src='./img_data/demo.png'>
+<img src='./img_data/demo.png' width=90%>
 
 <br>
 
 - 시스템 아키텍쳐
-<img src='./img_data/architecture.png'>
+<img src='./img_data/architecture.png' width=90%>
