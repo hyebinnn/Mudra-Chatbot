@@ -81,14 +81,14 @@ def runningApp(answer_user):
     return result
 
 
-if __name__ == '__main__':
-    answer_user = {  # 사용자에게 받은 대답( 안스에서 넘어온거 )
-        '감독': ['유선동 입니다.'],
-        '등급': ['15세 관람가'],
-        '장르': ['공포, 스릴러'],
-        '개봉년도': ['2019년도 일껄?'],
-        '주연배우': ['정은지 입니다']
+# if __name__ == '__main__':
+#     answer_user = {  # 사용자에게 받은 대답( 안스에서 넘어온거 )
+#         '감독': ['유선동 입니다.'],
+#         '등급': ['15세 관람가'],
+#         '장르': ['공포, 스릴러'],
+#         '개봉년도': ['2019년도 일껄?'],
+#         '주연배우': ['정은지 입니다']
 
-    }
-    answer = getSeverdata(answer_user)
-    print(answer)
+#     }
+#     answer = getSeverdata(answer_user)
+#     print(answer)

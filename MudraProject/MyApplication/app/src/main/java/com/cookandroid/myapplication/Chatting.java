@@ -78,10 +78,11 @@ public class Chatting extends AppCompatActivity {
 
     List<String> Qlist = Arrays.asList(Qgenre, Qgrade, Qactor, Qdirector, Qdate);
     String[] answers = new String[5];
-    Boolean Iscorrect = false;          // 최종답변 도출완료? Yes or No
-    JSONObject jobject = new JSONObject();          // answer 담긴 json 파일 만들기  // 최종 답변 json
-    JSONArray jArray = new JSONArray();
+    Boolean Iscorrect = false;          // 최종답변 도출완료 -> Yes or No
+    // JSONObject jobject = new JSONObject();          // answer 담긴 json 파일 만들기  
+    // JSONArray jArray = new JSONArray();
     JSONObject answerjson = new JSONObject();           //  answer 정보가 들어갈 jsonobject 선언
+    String movieResult = "";
 
     private static final String urls = "http://10.0.2.2:5000/";
 
@@ -202,14 +203,12 @@ public class Chatting extends AppCompatActivity {
 
         yesBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                jArray.add(answerjson);
-                //System.out.println(jArray);             // 4/17 굳.
-                jobject.put("답변", jArray);               //  답변 : { answerjson 내용 ... }
+                // jArray.add(answerjson);
+                // jobject.put("답변", jArray);               //  답변 : { answerjson 내용 ... }
 
                 Iscorrect = true;
                 String message = "영화 탐색이 완료되었습니다! :)";
                 printMessage("Mudra", message);     //  Mudra가 채팅 보내기
-                sendServer();
             }
         });
 
@@ -262,8 +261,7 @@ public class Chatting extends AppCompatActivity {
 
     public void printResult() {
         // flask 에 총 [answers] 배열 보내기
-        // 데이터 전처리된 결과 받아오기 , 아래 "최종영화" 안에 결과값 넣어주기
-        String result = "최종 영화";
+        sendServer();
         G.nickName = "Mudra";
         String message = "";
 
@@ -273,7 +271,7 @@ public class Chatting extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                String message = "찾으시는 영화 제목은 " + "\'"+result + "\'" + " 입니다.\n맞습니까?";
+                String message = "찾으시는 영화 제목은 " + "\'"+movieResult + "\'" + " 입니다.\n맞습니까?";
                 printMessage("Mudra", message);
             }
         }, 3000);      // 3초 뒤 실행
@@ -323,6 +321,8 @@ public class Chatting extends AppCompatActivity {
                     Response responses = null;
                     responses = client.newCall(request).execute();
                     System.out.println(responses.body().string());
+
+                    movieResult = responses.body().string();
 
                 } catch (IOException e) {
                     e.printStackTrace();
