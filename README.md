@@ -23,4 +23,4 @@ Mudra:: Chatbot that-finds-movies-through-keywords
 - 시스템 아키텍쳐
 <img src='./img_data/architecture.png' width=90%>
 
-> * 현재 올라와있는 코드는 최종본이 아닙니다.
+> 현재 올라와있는 코드는 최종본이 아닙니다.
